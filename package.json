@@ -1,0 +1,37 @@
+{
+  "name": "island-webpack-plugin",
+  "version": "1.0.1",
+  "description": "A island plugin for webpack",
+  "main": "src/index.js",
+  "scripts": {
+    "eslint": "eslint ./src",
+    "test": "jest",
+    "release": "npm publish"
+  },
+  "license": "MIT",
+  "repository": "zhw2590582/island-loader",
+  "authors": ["Harvey Zack <laozhaochaguan@hotmail.com>"],
+  "keywords": ["island", "loader", "webpack"],
+  "bugs": {
+    "url": "https://github.com/zhw2590582/island-loader/issues"
+  },
+  "homepage": "https://github.com/zhw2590582/island-loader#readme",
+  "eslintConfig": {
+    "extends": "eslint-config-zhw2590582"
+  },
+  "devDependencies": {
+    "babel-core": "^6.26.0",
+    "babel-jest": "^22.0.4",
+    "babel-preset-env": "^1.6.1",
+    "chalk": "^2.3.0",
+    "eslint": "^4.14.0",
+    "eslint-config-zhw2590582": "^1.1.1",
+    "jest": "^22.0.4",
+    "memory-fs": "^0.4.1",
+    "webpack": "^3.10.0"
+  },
+  "dependencies": {
+    "loader-utils": "^1.1.0",
+    "schema-utils": "^0.4.3"
+  }
+}
