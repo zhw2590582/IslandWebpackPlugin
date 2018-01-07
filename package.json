@@ -1,6 +1,6 @@
 {
   "name": "island-webpack-plugin",
-  "version": "1.0.1",
+  "version": "1.0.0",
   "description": "A island plugin for webpack",
   "main": "src/index.js",
   "scripts": {
@@ -9,13 +9,13 @@
     "release": "npm publish"
   },
   "license": "MIT",
-  "repository": "zhw2590582/island-loader",
+  "repository": "zhw2590582/island-webpack-plugin",
   "authors": ["Harvey Zack <laozhaochaguan@hotmail.com>"],
-  "keywords": ["island", "loader", "webpack"],
+  "keywords": ["island", "plugin", "webpack"],
   "bugs": {
-    "url": "https://github.com/zhw2590582/island-loader/issues"
+    "url": "https://github.com/zhw2590582/island-webpack-plugin/issues"
   },
-  "homepage": "https://github.com/zhw2590582/island-loader#readme",
+  "homepage": "https://github.com/zhw2590582/island-webpack-plugin#readme",
   "eslintConfig": {
     "extends": "eslint-config-zhw2590582"
   },
@@ -26,12 +26,9 @@
     "chalk": "^2.3.0",
     "eslint": "^4.14.0",
     "eslint-config-zhw2590582": "^1.1.1",
+    "island-loader": "^1.0.1",
     "jest": "^22.0.4",
-    "memory-fs": "^0.4.1",
+    "pify": "^3.0.0",
     "webpack": "^3.10.0"
-  },
-  "dependencies": {
-    "loader-utils": "^1.1.0",
-    "schema-utils": "^0.4.3"
   }
 }

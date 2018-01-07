@@ -1,18 +1,56 @@
 const fs = require('fs');
 const path = require('path');
 const chalk = require('chalk');
-const loaderUtils = require('loader-utils');
-const schema = require('./schema.json');
-const validateOptions = require('schema-utils').validateOptions;
+const validateOptions = require('schema-utils');
 
-const defaultOptions = {
-  name: 'island'
+class IslandWebpackPlugin {
+  constructor(options = {}) {
+    options = Object.assign({}, IslandWebpackPlugin.defaultOptions, options);
+    validateOptions(
+      path.resolve(__dirname, './schema.json'),
+      options,
+      'Island Webpack Plugin'
+    );
+    this.options = options;
+  }
+
+  static get defaultOptions() {
+    return {
+      author: 'null',
+      email: 'null',
+      homepage: 'null'
+    };
+  }
+
+  apply(compiler) {
+    const options = this.options;
+    compiler.plugin('emit', function(compilation, callback) {
+      compilation.chunks.forEach(function(chunk) {
+        chunk.files.forEach(function(filename) {
+          const source = compilation.assets[filename].source();
+          const authorInfo = `/*
+
+            @Author: ${options.author || ''}
+
+            @Email: ${options.email || ''}
+
+            @Homepage: ${options.homepage || ''}
+
+            @Date: ${new Date()}
+
+          */`;
+          const rawSource = `${authorInfo} \n\n ${source}`;
+          Promise.resolve(rawSource).then(source => {
+            compilation.assets[filename] = {
+              source: () => source,
+              size: () => source.length
+            };
+            callback();
+          });
+        });
+      });
+    });
+  }
 }
 
-module.exports = function (source) {
-  this.cacheable && this.cacheable();
-  const options = Object.assign({}, defaultOptions, loaderUtils.getOptions(this));
-  var callback = this.async();
-  source = source.replace(/\[name\]/g, options.name);
-  callback(null, `export default ${ JSON.stringify(source) }`);
-}
+module.exports = IslandWebpackPlugin;

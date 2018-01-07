@@ -1,2 +1,2 @@
-# IslandWebpackPlugin
-A island plugins for webpack
+# island-webpack-plugin
+A island plugin for webpack

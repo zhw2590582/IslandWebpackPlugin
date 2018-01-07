@@ -1,5 +1,18 @@
 {
-  "type": "object",
-  "properties": {},
-  "additionalProperties": false
-}
+    "type": "object",
+    "additionalProperties": false,
+    "properties": {
+      "author": {
+        "description": "",
+        "type": "string"
+      },
+      "email": {
+        "description": "",
+        "type": "string"
+      },
+      "homepage": {
+        "description": "",
+        "type": "string"
+      }
+    }
+  }
