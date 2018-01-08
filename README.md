@@ -1,5 +1,5 @@
 # island-webpack-plugin [![Build Status](https://www.travis-ci.org/zhw2590582/island-webpack-plugin.svg?branch=master)](https://www.travis-ci.org/zhw2590582/island-webpack-plugin)
-> A island plugin for webpack(目前测试用)
+> A island plugin for webpack(目前测试用于文件头部输出作者信息)
 
 ## Install
 

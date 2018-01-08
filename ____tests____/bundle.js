@@ -1,14 +1,14 @@
 /*
+ @Author: Harvey Zack 
 
-            @Author: Harvey Zack
+ @Email: 717995589@qq.com 
 
-            @Email: 717995589@qq.com
+ @Homepage: http://www.zhw-island.com 
 
-            @Homepage: http://www.zhw-island.com
+ @Date: Mon Jan 08 2018 19:38:09 GMT+0800 (HKT)
+ */ 
 
-            @Date: Sun Jan 07 2018 14:38:27 GMT+0800 (HKT)
-
-          */ 
+ 
 
  /******/ (function(modules) { // webpackBootstrap
 /******/ 	// The module cache
