@@ -28,17 +28,7 @@ class IslandWebpackPlugin {
       compilation.chunks.forEach(function(chunk) {
         chunk.files.forEach(function(filename) {
           const source = compilation.assets[filename].source();
-          const authorInfo = `/*
-
-            @Author: ${options.author || ''}
-
-            @Email: ${options.email || ''}
-
-            @Homepage: ${options.homepage || ''}
-
-            @Date: ${new Date()}
-
-          */`;
+          const authorInfo = `\n @Author: ${options.author} \n\n @Email: ${options.email} \n\n @Homepage: ${options.homepage} \n\n @Date: ${new Date()} \n\n`;
           const rawSource = `${authorInfo} \n\n ${source}`;
           Promise.resolve(rawSource).then(source => {
             compilation.assets[filename] = {
